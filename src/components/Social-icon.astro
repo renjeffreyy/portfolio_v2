@@ -1,0 +1,18 @@
+---
+interface Props {
+  iconName: string;
+  link: string;
+}
+
+const { iconName, link } = Astro.props;
+---
+
+<span class="sr-only">{iconName}</span>
+<a
+  class="[&>svg]:fill-blue-600 [&>svg]:w-6 [&>svg]:h-6"
+  href={link}
+  aria-label={`${iconName} (opens in new tab)`}
+  title={iconName}
+>
+  <slot />
+</a>
