@@ -1,0 +1,39 @@
+---
+import ProjectCard from "./Project-card.astro";
+
+interface Project {
+  title: string;
+  link: string;
+  description: string;
+}
+
+const projects = [
+  {
+    title: "Buffalo Bills",
+    link: "https://shop.buffalobills.com/",
+    description: "",
+  },
+  {
+    title: "Chicago Bulls",
+    link: "https://shop.bulls.com/",
+    description: "",
+  },
+];
+---
+
+<section>
+  <div>
+    <h2 class="text-blue-100 mb-4">PROJECTS</h2>
+  </div>
+  <div>
+    {
+      projects.map((project: Project) => (
+        <ProjectCard
+          title={project.title}
+          link={project.link}
+          description={project.description}
+        />
+      ))
+    }
+  </div>
+</section>
