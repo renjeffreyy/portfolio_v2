@@ -12,13 +12,13 @@ const { title, link, subtitle, description } = Astro.props;
 ---
 
 <header>
-  <h1 class="text-blue-100 font-bold text-4xl mb-2">
+  <h1 class="text-blue-100 font-bold text-4xl mb-2 mt-8">
     <a href={link}>
       {title}
     </a>
   </h1>
-  <h2 class="text-blue-100 text-lg">{subtitle}</h2>
-  <p class="text-blue-600">{description}</p>
+  <h2 class="text-blue-100 text-lg mb-4">{subtitle}</h2>
+  <p class="text-blue-600 mb-6">{description}</p>
   <nav>
     <ul class="flex gap-x-4 items-center my-4">
       <li>

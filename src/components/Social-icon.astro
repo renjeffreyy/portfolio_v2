@@ -7,7 +7,7 @@ interface Props {
 const { iconName, link } = Astro.props;
 ---
 
-<span class="sr-only">{iconName}</span>
+<span class="sr-only text-blue-100">{iconName}</span>
 <a
   class="[&>svg]:fill-blue-600 [&>svg]:w-6 [&>svg]:h-6"
   href={link}
