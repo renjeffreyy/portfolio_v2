@@ -1,0 +1,20 @@
+---
+interface Navitem {
+  link: string;
+  title: string;
+}
+
+const {link, title} = Astro.props
+---
+<li>
+    <a class="group cursor-pointer flex items-center gap-4" href={link}>
+        <span class="nav-indicator block w-8 h-px bg-blue-600 group-hover:w-16 group-hover:bg-blue-100 transition-all"></span>
+        <span class="nav-text text-blue-600 group-hover:text-blue-100">{title}</span>
+    </a>
+</li>
+
+<style>
+    .active {
+
+    }
+</style>

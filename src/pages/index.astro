@@ -6,12 +6,14 @@ import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Jeffrey Ren">
-  <main>
-    <Header title="Jeffrey Ren" link="/" subtitle="Fullstack Engineer" description="I build enganging and accessible digital experiences"/>
+	<div class="lg:flex ">
+		<Header title="Jeffrey Ren" link="/" subtitle="Fullstack Engineer" description="I build enganging and accessible digital experiences"/>
+		<main>
+			<About />
+			<Projects />
+		</main>
+	</div>
 
-	<About />
-	<Projects />
-  </main>
 
   <style></style>
 </Layout>
