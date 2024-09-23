@@ -1,10 +1,11 @@
 ---
 import Pill from "./Pill.astro"
+import PillList from "./Pill-list.astro"
 const {dates, title, description, company, tech, link } = Astro.props
 ---
 
 <div class="rounded flex justify-between gap-x-10 p-4 hover:bg-blue-950">
-    <header aria-label="" class="text-color text-xs">
+    <header aria-label="" class="text-color text-xs w-28">
         {dates}
     </header>
     <div class="flex-grow">
@@ -19,12 +20,6 @@ const {dates, title, description, company, tech, link } = Astro.props
         <p class="text-color">
             {description}
         </p>
-        <ul class="flex flex-wrap gap-2 mt-4">
-            {tech ? tech.map(
-                (techText: string)=> <Pill>
-                    {techText}
-                </Pill>
-            ):null}
-        </ul>
+        <PillList tech={tech}/>
     </div>
 </div>

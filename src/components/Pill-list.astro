@@ -1,0 +1,13 @@
+---
+import Pill from "./Pill.astro"
+
+const {tech} = Astro.props
+---
+
+<ul class="flex flex-wrap gap-2 mt-4">
+    {tech ? tech.map(
+        (techText: string)=> <Pill>
+            {techText}
+        </Pill>
+    ):null}
+</ul>

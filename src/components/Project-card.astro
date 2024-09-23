@@ -1,23 +1,32 @@
 ---
+import LinkIcon from "./Link-icon.astro";
+import PillList from "./Pill-list.astro";
+import { Image } from 'astro:assets';
 
-
-
-const { title, link, description } = Astro.props;
+const { title, link, description, tech, image } = Astro.props;
 ---
 
-<div>
-    <h3 class="text-blue-100">
-        <a href={link}>
-            {title}
-        </a>
-    </h3>
-    <div>
-        <p class="text-base text-blue-600">
-            {description}
-        </p>
-        <ul>
+<div class="group flex gap-x-4">
+  <div>
+    {
+        image ? <Image src={image} alt={title} /> : null
+    }
+  </div>  
+  <h3 class="text-blue-100">
+    <a href={link}>
+      <span>
+        {title}
+      </span>
+      <span>
+        <LinkIcon />
+      </span>
+    </a>
+  </h3>
+  <div>
+    <p class="text-base text-blue-600">
+      {description}
+    </p>
+    <PillList tech={tech}/>
+  </div>
 
-        </ul>
-    </div>
 </div>
-
