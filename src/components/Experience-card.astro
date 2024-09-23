@@ -1,0 +1,30 @@
+---
+import Pill from "./Pill.astro"
+const {dates, title, description, company, tech, link } = Astro.props
+---
+
+<div class="rounded flex justify-between gap-x-10 p-4 hover:bg-blue-950">
+    <header aria-label="" class="text-color text-xs">
+        {dates}
+    </header>
+    <div class="flex-grow">
+        <h3 class="header-color">
+            <span>
+                {title}
+            </span>
+            <span>
+                {company}
+            </span>
+        </h3>
+        <p class="text-color">
+            {description}
+        </p>
+        <ul class="flex flex-wrap gap-2 mt-4">
+            {tech ? tech.map(
+                (techText: string)=> <Pill>
+                    {techText}
+                </Pill>
+            ):null}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+---
+import StickyHeader from "./Sticky-header.astro";
+import ExperienceCard from "./Experience-card.astro";
+
+interface Experience {
+  title: string;
+  link?: string;
+  description: string;
+  company: string;
+  dates: string;
+  tech?: Array<string>
+}
+
+const experience: Experience[] = [
+  {
+    title: "Frontend E-commerce Developer ·",
+    company: "Legends Global Merchandise",
+    description: "Lorem Ipsum",
+    dates: "2023 - PRESENT",
+    tech:["Shopify", "Liquid", "Javascript"]
+  },
+  {
+    title: "Frontend Developer ·",
+    company: "Drinks",
+    description: "Lorem Ipsum",
+    dates: "2021 - 2023",
+    tech:["AlpineJS", "Vuejs", "Tailwind", "Shopify","Hubspot", "Wordpress"]
+  },
+  {
+    title: "Fullstack Engineer ·",
+    company: "Urban TXT",
+    description: "lorem ipsum",
+    dates:"2020 - 2021",
+    tech: ["Angular", "Express", "MongoDB", "TypeScript"]
+  },
+];
+---
+
+<section>
+  <StickyHeader>EXPERIENCE</StickyHeader>
+  <div>
+    {
+      experience.map((e) => (
+        <ExperienceCard
+          dates={e.dates}
+          title={e.title}
+          description={e.description}
+          company={e.company}
+          tech={e.tech}
+        />
+      ))
+    }
+  </div>
+  <div class="flex items-center text-blue-100">
+    View Full Résumé
+    <span class="flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+        aria-hidden="true"
+        ><path
+          fill-rule="evenodd"
+          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+          clip-rule="evenodd"></path></svg
+      >
+    </span>
+  </div>
+</section>

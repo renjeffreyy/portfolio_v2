@@ -1,0 +1,12 @@
+---
+interface StickyHeader{
+    title: string;
+}
+
+const {title} = Astro.props
+---
+<div class="sticky top-0">
+    <h2 class="text-blue-100">
+        <slot />
+    </h2>
+</div>
