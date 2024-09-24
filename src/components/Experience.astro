@@ -8,7 +8,7 @@ interface Experience {
   description: string;
   company: string;
   dates: string;
-  tech?: Array<string>
+  tech?: Array<string>;
 }
 
 const experience: Experience[] = [
@@ -17,23 +17,26 @@ const experience: Experience[] = [
     company: "Legends Global Merchandise",
     description: "Lorem Ipsum",
     dates: "2023 - PRESENT",
-    tech:["Shopify", "Liquid", "Javascript"]
+    tech: ["Shopify", "Liquid", "Javascript"],
   },
   {
     title: "Frontend Developer ·",
     company: "Drinks",
     description: "Lorem Ipsum",
     dates: "2021 - 2023",
-    tech:["AlpineJS", "Vuejs", "Tailwind", "Shopify","Hubspot", "Wordpress"]
+    tech: ["AlpineJS", "Vuejs", "Tailwind", "Shopify", "Hubspot", "Wordpress"],
   },
   {
     title: "Fullstack Engineer ·",
     company: "Urban TXT",
     description: "lorem ipsum",
-    dates:"2020 - 2021",
-    tech: ["Angular", "Express", "MongoDB", "TypeScript", "Ionic", "Bootstrap"]
-  }
+    dates: "2020 - 2021",
+    tech: ["Angular", "Express", "MongoDB", "TypeScript", "Ionic", "Bootstrap"],
+  },
 ];
+
+const resumeUrl =
+  "https://drive.google.com/file/d/1ldToECMx7hUN8YedKz7WjYVourQWOdnB/view?usp=sharing";
 ---
 
 <section>
@@ -51,14 +54,22 @@ const experience: Experience[] = [
       ))
     }
   </div>
-  <div class="flex items-center text-blue-100 mb-20 group px-4 mt-8">
-    View Full Résumé
+  <a
+    rel="noreferrer noopener"
+    aria-label="Jeffrey Ren's Resume (Opens in another tab)"
+    class="flex items-center text-blue-100 mb-20 group px-4 mt-8 "
+    target="_blank"
+    href={resumeUrl}
+  >
+    <span class="hover:text-cyan-400 hover:underline hover:underline-offset-4">
+        View Full Résumé
+    </span>
     <span class="flex items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+        class="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px group-hover:fill-cyan-400"
         aria-hidden="true"
         ><path
           fill-rule="evenodd"
@@ -66,5 +77,5 @@ const experience: Experience[] = [
           clip-rule="evenodd"></path></svg
       >
     </span>
-  </div>
+  </a>
 </section>
