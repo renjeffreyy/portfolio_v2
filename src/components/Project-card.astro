@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 const { title, link, description, tech, image } = Astro.props;
 ---
 
-<a aria-label={`${title} (Opens in another tab)`} href={link} target="_blank" class="group flex gap-x-4 hover:bg-blue-950 px-4 py-6 rounded lg:mr-4">
+<a aria-label={`${title} (Opens in another tab)`} href={link} target="_blank" title={title} class="group flex gap-x-4 hover:bg-blue-950 px-4 py-6 rounded lg:mr-4">
   <div>
     <div class="rounded relative w-32 pt-24 overflow-hidden bg-blue-100">
       {

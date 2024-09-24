@@ -18,12 +18,13 @@ const { title, link, subtitle, description } = Astro.props;
   class="lg:flex-shrink-0 lg:w-1/2 flex flex-col justify-between lg:py-24 lg:sticky lg:top-0 lg:max-h-screen"
 >
   <div>
-    <div class="flex items-center">
-      <div class="relative rounded-full w-36 pt-36 overflow-hidden m-4">
+    <div class="flex items-center gap-x-2">
+      <div class="relative rounded-3xl w-32 h-32 sm:w-36 sm:pt-36 overflow-hidden m-4">
         <Image
           class="absolute inset-0 w-full h-full object-cover"
           src={Jeff}
           alt="Jeffrey Ren smiling sitting on a boat with an ocean background"
+          loading="lazy"
         />
       </div>
       <div>
@@ -34,10 +35,10 @@ const { title, link, subtitle, description } = Astro.props;
             {title}
           </a>
         </h1>
-        <h2 class="text-blue-100 text-lg mb-4 px-4">{subtitle}</h2>
+        <h2 class="text-blue-100 text-lg px-4">{subtitle}</h2>
       </div>
     </div>
-    <p class="text-blue-600 mb-6 px-4">{description}</p>
+    <p class="text-blue-600 mb-6 px-4 lg:mb-20">{description}</p>
     <nav class="hidden lg:block px-4">
       <ul class="w-max flex flex-col gap-y-2">
         <DesktopNavItem title="ABOUT" link="#About" />

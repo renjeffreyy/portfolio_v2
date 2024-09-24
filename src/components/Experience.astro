@@ -22,14 +22,14 @@ const experience: Experience[] = [
   {
     title: "Frontend Developer ·",
     company: "Drinks",
-    description: "Lorem Ipsum",
+    description: "Client website optimization · SEO optimization · Accessibility Audits · Built subscription portals ",
     dates: "2021 - 2023",
     tech: ["AlpineJS", "Vuejs", "Tailwind", "Shopify", "Hubspot", "Wordpress"],
   },
   {
     title: "Fullstack Engineer ·",
     company: "Urban TXT",
-    description: "lorem ipsum",
+    description: "Added new features to in house CRM · Built Slack bots for internal processes · Developed Mobile App to teach teenagers how to save and invest",
     dates: "2020 - 2021",
     tech: ["Angular", "Express", "MongoDB", "TypeScript", "Ionic", "Bootstrap"],
   },
@@ -54,28 +54,32 @@ const resumeUrl =
       ))
     }
   </div>
-  <a
-    rel="noreferrer noopener"
-    aria-label="Jeffrey Ren's Resume (Opens in another tab)"
-    class="flex items-center text-blue-100 mb-20 group px-4 mt-8 "
-    target="_blank"
-    href={resumeUrl}
-  >
-    <span class="hover:text-cyan-400 hover:underline hover:underline-offset-4">
-        View Full Résumé
-    </span>
-    <span class="flex items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        class="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px group-hover:fill-cyan-400"
-        aria-hidden="true"
-        ><path
-          fill-rule="evenodd"
-          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-          clip-rule="evenodd"></path></svg
+  <div class="flex">
+      <a
+        rel="noreferrer noopener"
+        aria-label="Jeffrey Ren's Resume (Opens in another tab)"
+        class="text-blue-100 mb-20  px-4 mt-8"
+        target="_blank"
+        href={resumeUrl}
       >
-    </span>
-  </a>
+      <span class="flex items-center group">
+          <span class="hover:text-cyan-400 hover:underline hover:underline-offset-4 transition-all">
+              View Full Résumé
+          </span>
+          <span class="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px group-hover:fill-cyan-400"
+              aria-hidden="true"
+              ><path
+                fill-rule="evenodd"
+                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                clip-rule="evenodd"></path></svg
+            >
+          </span>
+      </span>
+      </a>
+  </div>
 </section>

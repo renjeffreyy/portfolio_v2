@@ -2,6 +2,7 @@
 import ProjectCard from "./Project-card.astro";
 import bills from "../../src/images/bills.png";
 import soylent from "../../src/images/soylent_logo.webp";
+import hnc from "../../src/images/HNC.png";
 
 interface Project {
   title: string;
@@ -15,27 +16,29 @@ const projects: Array<Project> = [
   {
     title: "Buffalo Bills",
     link: "https://shop.buffalobills.com/",
-    description: "t4est",
-    tech: ["HTML", "CSS", "Javascript"],
+    description: "Collaborated with design team to rebuild entire E-commerce Site for The Buffalo Bills.",
+    tech: ["HTML", "CSS", "Javascript", "Shopify"],
     image: bills,
   },
   {
     title: "Soylent",
     link: "https://soylent.com/",
-    description: "t4est",
-    tech: ["Tailwind", "AlpineJS"],
+    description: "Built subscription portal with the Recharge API to help customers manage subscriptions and orders · Created custom scripts for product promotions and tailored experiences · Created reusable widgets used across entire site",
+    tech: ["Tailwind", "AlpineJS", "Recharge", "Shopify"],
     image: soylent,
   },
   {
-    title: "Chicago Bulls",
-    link: "https://shop.bulls.com/",
-    description: "testttt",
+    title: "Hustle N' Code",
+    link: "https://hustlencode.io/",
+    description: "Developed Online coding platform built to help young teenagers learn how to code ",
+    tech: ["Angular", "MongoDB", "Express", "Node"],
+    image: hnc
   },
 ];
 ---
 
 <section id="Projects">
-  <div>
+ <div>
     <h2 class="text-blue-100 mb-4 px-4">PROJECTS</h2>
   </div>
   <div>
@@ -54,7 +57,7 @@ const projects: Array<Project> = [
     </div>
     <div class="mb-8 lg:mb-0">
       <a class="header-color mt-4 flex items-center px-4 group " href="/projects">
-        <span class="group-hover:text-cyan-400 hover:underline underline-offset-4"> View Full Project Archive </span>
+        <span class="group-hover:text-cyan-400 hover:underline underline-offset-4 transition-all"> View Full Project Archive </span>
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
