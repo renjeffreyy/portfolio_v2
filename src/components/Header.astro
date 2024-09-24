@@ -13,9 +13,9 @@ import DesktopNavItem from "./Desktop-nav-item.astro";
 const { title, link, subtitle, description } = Astro.props;
 ---
 
-<header class="lg:flex-shrink-0 w-1/2 flex flex-col justify-between lg:py-24">
+<header class="lg:flex-shrink-0 w-1/2 flex flex-col justify-between lg:py-24 lg:sticky lg:top-0 lg:max-h-screen">
   <div>
-    <h1 class="text-blue-100 font-bold text-4xl mb-2 mt-8 lg:mt-0">
+    <h1 class="text-blue-100 font-bold text-4xl mb-2 mt-8 lg:mt-0 sm:text-5xl">
       <a href={link}>
         {title}
       </a>
@@ -23,13 +23,14 @@ const { title, link, subtitle, description } = Astro.props;
     <h2 class="text-blue-100 text-lg mb-4">{subtitle}</h2>
     <p class="text-blue-600 mb-6">{description}</p>
     <nav class="hidden lg:block">
-      <ul class="w-max">
+      <ul class="w-max flex flex-col gap-y-2">
         <DesktopNavItem title="ABOUT" />
         <DesktopNavItem title="EXPERIENCE"/>
+        <DesktopNavItem title="PROJECTS"/>
       </ul>
     </nav>
   </div>
-    <ul class="flex gap-x-4 items-center my-4">
+    <ul class="flex gap-4 items-center my-4 lg:m-0">
       <li>
         <SocialIcon link="https://github.com/renjeffreyy" iconName="Github">
           <svg
