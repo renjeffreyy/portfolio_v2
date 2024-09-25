@@ -29,7 +29,7 @@ const { title, link, subtitle, description } = Astro.props;
       </div>
       <div>
         <h1
-          class="text-blue-100 font-bold text-4xl mb-2 mt-8 lg:mt-0 sm:text-5xl px-4"
+          class="text-blue-100 font-bold text-4xl mb-2 mt-0 sm:text-5xl px-4"
         >
           <a href={link}>
             {title}
@@ -38,7 +38,7 @@ const { title, link, subtitle, description } = Astro.props;
         <h2 class="text-blue-100 text-lg px-4">{subtitle}</h2>
       </div>
     </div>
-    <p class="text-blue-600 mb-6 px-4 lg:mb-20">{description}</p>
+    <p class="text-blue-600 px-4 lg:mb-20">{description}</p>
     <nav class="hidden lg:block px-4">
       <ul class="w-max flex flex-col gap-y-2">
         <DesktopNavItem title="ABOUT" link="#About" />
