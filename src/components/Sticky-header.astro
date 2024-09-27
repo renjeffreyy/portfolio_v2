@@ -5,8 +5,9 @@ interface StickyHeader{
 
 const {title} = Astro.props
 ---
-<div class="sticky top-0 p-4">
+<div class="sticky top-0 p-4 backdrop-blur">
     <h2 class="text-blue-100">
-        <slot />
+        {title}
     </h2>
 </div>
+

@@ -7,14 +7,19 @@ interface Navitem {
 const {link, title} = Astro.props
 ---
 <li>
-    <a class="group cursor-pointer flex items-center gap-4" href={link}>
+    <a class="group cursor-pointer flex items-center gap-4" href={link} data-section={`#${title}`}>
         <span class="nav-indicator block w-8 h-px bg-blue-600 group-hover:w-16 group-hover:bg-blue-100 transition-all"></span>
         <span class="nav-text text-blue-600 group-hover:text-blue-100 transition-all">{title}</span>
     </a>
 </li>
 
 <style>
-    .active {
+    .active span:first-child{
+        width: 64px;
+        background: #eef4ed;
+    }
 
+    .active span:last-child{
+        color: #eef4ed;
     }
 </style>

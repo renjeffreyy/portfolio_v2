@@ -19,7 +19,9 @@ const { title, link, subtitle, description } = Astro.props;
 >
   <div>
     <div class="flex items-center gap-x-2">
-      <div class="relative rounded-3xl w-32 h-32 sm:w-36 sm:pt-36 overflow-hidden m-4">
+      <div
+        class="relative rounded-3xl w-32 h-32 sm:w-36 sm:pt-36 overflow-hidden m-4"
+      >
         <Image
           class="absolute inset-0 w-full h-full object-cover"
           src={Jeff}
@@ -30,9 +32,7 @@ const { title, link, subtitle, description } = Astro.props;
         />
       </div>
       <div>
-        <h1
-          class="text-blue-100 font-bold text-4xl mb-2 mt-0 sm:text-5xl px-4"
-        >
+        <h1 class="text-blue-100 font-bold text-4xl mb-2 mt-0 sm:text-5xl px-4">
           <a href={link}>
             {title}
           </a>
@@ -42,10 +42,10 @@ const { title, link, subtitle, description } = Astro.props;
     </div>
     <p class="text-blue-600 px-4 lg:mb-20">{description}</p>
     <nav class="hidden lg:block px-4">
-      <ul class="w-max flex flex-col gap-y-2">
-        <DesktopNavItem title="ABOUT" link="#About" />
-        <DesktopNavItem title="EXPERIENCE" link="#Experience" />
-        <DesktopNavItem title="PROJECTS" link="#Projects" />
+      <ul class="w-max flex flex-col gap-y-2 desktop-nav">
+        <DesktopNavItem title="ABOUT" link="#ABOUT" />
+        <DesktopNavItem title="EXPERIENCE" link="#EXPERIENCE" />
+        <DesktopNavItem title="PROJECTS" link="#PROJECTS" />
       </ul>
     </nav>
   </div>
@@ -95,3 +95,25 @@ const { title, link, subtitle, description } = Astro.props;
     </li>
   </ul>
 </header>
+
+<script>
+  const navItem: any = document.querySelectorAll(".desktop-nav li a");
+
+  navItem.forEach((item: any) => {
+    const sectionId = item.dataset.section
+    const section = document.querySelector(sectionId);
+
+    const callBack = (entries: any) => {
+      entries.map((el: any) => {
+        el.isIntersecting ? item.classList.add('active') : item.classList.remove('active')
+      });
+    };
+    const options = {
+      threshold: 0.7,
+      rootMargin: "20px"
+    };
+    const observer = new IntersectionObserver(callBack, options);
+
+    observer.observe(section);
+  });
+</script>
