@@ -3,6 +3,7 @@ import ProjectCard from "./Project-card.astro";
 import bills from "../../src/images/bills.png";
 import soylent from "../../src/images/soylent_logo.webp";
 import hnc from "../../src/images/HNC.png";
+import StickyHeader from "./Sticky-header.astro";
 
 interface Project {
   title: string;
@@ -38,9 +39,7 @@ const projects: Array<Project> = [
 ---
 
 <section id="Projects">
- <div>
-    <h2 class="text-blue-100 mb-4 px-4">PROJECTS</h2>
-  </div>
+    <StickyHeader>PROJECTS</StickyHeader>
   <div>
     <div class="flex flex-col">
       {
