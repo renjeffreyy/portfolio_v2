@@ -1,10 +1,10 @@
 ---
 import Pill from "./Pill.astro"
 
-const {tech} = Astro.props
+const {tech, classes} = Astro.props
 ---
 
-<ul class="flex flex-wrap gap-2 mt-4">
+<ul class=`flex flex-wrap gap-2 mt-4 ${classes? classes : ''}`>
     {tech ? tech.map(
         (techText: string)=> <Pill>
             {techText}

@@ -1,14 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectsHeader from "../components/Projects-header.astro";
-
+import ProjectsTable from "../components/Projects-table.astro";
 ---
 
 <Layout title="Jeffrey Ren Projects">
-  <main class="pt-4 lg:pt-32 px-4 lg:px-8 max-w-screen-xl mx-auto">
+  <main class="pt-4 md:pt-32 px-4 md:px-8 max-w-screen-xl mx-auto">
     <ProjectsHeader>
         All Projects
     </ProjectsHeader>
+    <ProjectsTable />
   </main>
 
   <style></style>

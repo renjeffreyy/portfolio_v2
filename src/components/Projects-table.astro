@@ -1,0 +1,84 @@
+---
+import PillList from "./Pill-list.astro";
+import LinkIcon from "./Link-icon.astro";
+
+interface project {
+  year: string;
+  name: string;
+  tech: Array<string>;
+  link?: string;
+  url?: string;
+}
+
+const tableData: Array<project> = [
+  {
+    year: "2024",
+    name: "Buffalo Bills",
+    tech: ["Shopify", "liquid", "javascript", "css", "HTML"],
+    link: "https://shop.buffalobills.com/",
+    url: "https://shop.buffalobills.com/",
+  },
+];
+---
+
+<table class="w-full border-collapse text-left">
+  <thead
+    class="border-b border-b-blue-600/10 backdrop-blur py-5 px-6 bg-blue-900/85"
+  >
+    <tr>
+      <th class="text-blue-100 py-4 pr-8 text-sm font-medium"> Year </th>
+      <th class="text-blue-100 py-4 pr-8 text-sm font-medium"> Project </th>
+      <th
+        class="text-blue-100 py-4 pr-8 text-sm font-medium hidden lg:table-cell"
+      >
+        Built with
+      </th>
+      <th
+        class="text-blue-100 py-4 pr-8 text-sm font-medium hidden md:table-cell"
+      >
+        Link
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      tableData.map((data: project) => (
+        <tr class="border-b border-b-blue-600/10">
+          <td class="text-blue-600 font-light py-4 pr-4">{data.year}</td>
+          <td class="text-blue-100 py-4 pr-4">
+            <span class="hidden md:block">{data.name}</span>
+            {data.url ? (
+              <a
+                class="group flex items-center text-blue-100 md:hidden"
+                href={data.url}
+                target="_blank"
+                aria-label={`opens ${data.name} in a new tab`}
+              >
+                <span>{data.name}</span>
+                <span>
+                  <LinkIcon />
+                </span>
+              </a>
+            ) : null}
+          </td>
+          <td class="hidden lg:table-cell">
+            <PillList tech={data.tech} classes="!mt-0" />
+          </td>
+          <td class="hidden md:table-cell">
+            <a
+              class="group flex items-center text-blue-600"
+              href={data.url}
+              target="_blank"
+              aria-label={`opens ${data.name} in a new tab`}
+            >
+              <span>{data.link}</span>
+              <span>
+                <LinkIcon />
+              </span>
+            </a>
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
