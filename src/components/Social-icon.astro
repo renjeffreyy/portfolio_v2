@@ -13,6 +13,7 @@ const { iconName, link } = Astro.props;
   href={link}
   aria-label={`${iconName} (opens in new tab)`}
   title={iconName}
+  target="_blank"
 >
   <slot />
 </a>
