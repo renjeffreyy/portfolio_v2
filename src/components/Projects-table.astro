@@ -112,12 +112,12 @@ const tableData: Array<project> = [
             <span class="hidden md:block">{data.name}</span>
             {data.url ? (
               <a
-                class="group flex items-center text-blue-100 md:hidden"
+                class="group text-blue-100 md:hidden"
                 href={data.url}
                 target="_blank"
                 aria-label={`opens ${data.name} in a new tab`}
               >
-                <span>{data.name}</span>
+                {data.name}
                 <span>
                   <LinkIcon />
                 </span>
@@ -134,7 +134,7 @@ const tableData: Array<project> = [
               target="_blank"
               aria-label={`opens ${data.name} in a new tab`}
             >
-              <span>{data.link}</span>
+              <span class="group-hover:text-cyan-400">{data.link}</span>
               <span>
                 <LinkIcon />
               </span>
